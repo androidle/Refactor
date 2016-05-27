@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/layout_title"/>
+
+    <RelativeLayout
+        android:id="@+id/ac_input_pwd_lay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_131"
+        android:layout_below="@+id/include"
+        android:layout_margin="@dimen/px_44">
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/px_131"
+            android:background="@drawable/tech_bg_edittext"
+            android:hint="@string/shurumima"
+            android:inputType="text"
+            android:paddingLeft="@dimen/px_22"
+            android:textColor="@color/text_2"
+            android:textColorHint="@color/text_3"
+            android:textSize="@dimen/px_44"/>
+
+
+        <ImageView
+            android:id="@+id/change_password_visible"
+            android:layout_width="@dimen/px_131"
+            android:layout_height="@dimen/px_131"
+            android:layout_alignBottom="@+id/et_password"
+            android:layout_alignRight="@+id/et_password"
+            android:layout_alignTop="@+id/et_password"
+            android:padding="@dimen/px_33"
+            android:scaleType="centerInside"
+            android:src="@mipmap/ic_password_normal"/>
+
+    </RelativeLayout>
+
+    <!--<com.thinkcoo.mobile.presentation.views.component.ClearAndCipherEditText-->
+    <!--android:id="@+id/ac_input_pwd_lay"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/include"-->
+    <!--android:layout_margin="@dimen/px_44">-->
+
+    <!--</com.thinkcoo.mobile.presentation.views.component.ClearAndCipherEditText>-->
+
+    <RelativeLayout
+        android:id="@+id/ac_input_location_lay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_131"
+        android:layout_below="@+id/ac_input_pwd_lay"
+        android:layout_margin="@dimen/px_44"
+        android:background="@drawable/bg_edittext_normal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/edit_choose_privoer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:focusable="false"
+            android:paddingLeft="@dimen/px_22"
+            android:text="@string/diqu"
+            android:textColor="@color/text_2"
+            android:textSize="@dimen/text_small_m"/>
+
+
+        <ImageView
+            android:id="@+id/button_chooes_provice"
+            android:layout_width="@dimen/px_131"
+            android:layout_height="@dimen/px_131"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/px_33"
+            android:scaleType="centerInside"
+            android:src="@mipmap/dayu"/>
+
+
+        <TextView
+            android:id="@+id/text_choose_provice"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/button_chooes_provice"
+            android:gravity="center_vertical"
+            android:text="请选择"
+            android:textColor="@color/text_2"
+            android:textSize="@dimen/text_small_m"/>
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/et_accountname"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_131"
+        android:layout_below="@+id/ac_input_location_lay"
+        android:layout_marginLeft="@dimen/px_44"
+        android:layout_marginRight="@dimen/px_44"
+        android:background="@drawable/tech_bg_edittext"
+        android:hint="@string/xingming"
+        android:inputType="text"
+        android:paddingLeft="@dimen/px_22"
+        android:textColor="@color/text_2"
+        android:textColorHint="@color/text_3"
+        android:textSize="@dimen/px_44"/>
+
+    <Button
+        android:id="@+id/btn_commit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_131"
+        android:layout_below="@+id/et_accountname"
+        android:layout_margin="@dimen/px_44"
+        android:background="@drawable/ac_shape_but_bule"
+        android:text="@string/tijiao"
+        android:textColor="@color/white"
+        android:textSize="@dimen/px_44"/>
+
+</RelativeLayout>

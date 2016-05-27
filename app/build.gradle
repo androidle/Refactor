@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "com.thinkcoo.mobile"
+        minSdkVersion 14
+        targetSdkVersion 20
+        versionCode 17000
+        versionName "2.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+dependencies {
+
+    def appDependencies = rootProject.ext.appDependencies
+    def testDependencies = rootProject.ext.apptestDependencies
+    def developmentDependencies = rootProject.ext.developmentDependencies
+
+    //file lib
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(dir: 'libs', include: ['*.aar'])
+
+    //lib
+    apt appDependencies.daggerCompiler
+    //apt appDependencies.excilysAndroidannotationsCompiler
+    compile appDependencies.dagger
+    compile appDependencies.butterKnife
+    compile appDependencies.recyclerView
+    compile appDependencies.rxJava
+    //compile appDependencies.excilysAndroidannotations
+    compile appDependencies.rxAndroid
+    compile appDependencies.mvp
+    compile appDependencies.mvpViewstate
+    compile appDependencies.fresco
+    provided appDependencies.javaxAnnotation
+    compile appDependencies.retrofitGsonPart
+    compile appDependencies.retrofitRxJava
+    compile appDependencies.retrofitBase
+    compile appDependencies.okHttpLog
+
+    //android test
+    androidTestCompile testDependencies.mockito
+    androidTestCompile testDependencies.dexmaker
+    androidTestCompile testDependencies.dexmakerMockito
+    //androidTestCompile testDependencies.espressoCore
+    //androidTestCompile testDependencies.espressoContrib
+    //androidTestCompile testDependencies.espressoIntents
+    //androidTestCompile testDependencies.androidTestSupportLibraryRunner
+    //androidTestCompile testDependencies.androidTestSupportLibraryRules
+    //androidTestCompile testDependencies.androidAnnotations
+
+    //unit test
+    testCompile testDependencies.junit
+    testCompile testDependencies.assertj
+    testCompile testDependencies.mockito
+    testCompile testDependencies.robolectric
+
+    //Development
+    compile developmentDependencies.leakCanary
+
+}
